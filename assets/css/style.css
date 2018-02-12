@@ -1,0 +1,556 @@
+    /* ---------------------------------------------------------------- */
+    /* color: #0044ff; */
+    /* ================================================================= */
+
+    html,
+    body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -o-user-select: none;
+    }
+
+    * {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    body {
+        background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, .85)), to(rgba(0, 0, 0, .85))), url('https://source.unsplash.com/800x600/?forest,woods');
+        /* background-color: #444444; */
+        background-attachment: fixed;
+        font-size: 14px;
+        min-width: 720px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    #nowplayingbarcontainer {
+        width: 100%;
+        background-color: #272727;
+        bottom: 0;
+        position: fixed;
+        min-width: 620px;
+    }
+
+    #nowplayingbar {
+        display: flex;
+        height: 90px;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    #nowplayingleft,
+    #nowplayingright {
+        width: 30%;
+        min-width: 100px;
+    }
+
+    #nowplayingright {
+        position: relative;
+        margin-top: 16px;
+    }
+
+    #nowplayingcenter {
+        width: 40%;
+        max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #nowplayingbar .content {
+        width: 100%;
+        height: 57px;
+    }
+
+    .playercontrols buttons {
+        margin: 0 auto;
+        display: table;
+    }
+
+    div.buttons {
+        text-align: center;
+    }
+
+    .controlbuttons {
+        background-color: transparent;
+        border: none;
+        vertical-align: middle;
+    }
+
+    .controlbuttons img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .controlbuttons.play img,
+    .controlbuttons.pause img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .controlbuttons:hover {
+        cursor: pointer;
+    }
+
+    .progresstime {
+        color: #a0a0a0;
+        font-size: 11px;
+        min-width: 40px;
+        text-align: center;
+    }
+
+    .playbackbar {
+        display: flex;
+    }
+
+    .progressbar {
+        width: 100%;
+        height: 12px;
+        display: inline-flex;
+        cursor: pointer;
+        margin-top: 4px;
+    }
+
+    .progressbarbg {
+        background-color: #404040;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+       
+    }
+
+    .progress {
+        background-color: #0044ff;
+        height: 4px;
+        width: 0;
+        border-radius: 2px;
+    }
+
+    .playbackbar .progrssbar {
+        margin-top: 3px;
+    }
+
+    #nowplayingleft .albumartwork {
+        height: 100%;
+        max-width: 60px;
+        margin-right: 15px;
+        float: left;
+        background-size: cover;
+    }
+
+    #nowplayingleft .trackinfo {
+        display: table;
+    }
+
+    #nowplayingleft .trackinfo .trackname {
+        margin: 6px 0;
+        display: inline-block;
+        width: 100%;
+    }
+
+    #nowplayingleft .trackinfo .artistname {
+        font-size: 12px;
+        color: #a0a0a0;
+    }
+
+    .volumebar {
+        width: 180px;
+        position: absolute;
+        right: 0;
+    }
+
+    .volumebar .progressbar {
+        width: 125px;
+    }
+
+    #topcontainer {
+        min-height: 100%;
+        width: 100%;
+    }
+
+    #navbarcontainer {
+        background-color: #000;
+        width: 220px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .navbar {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        -ms-flex-direction: column;
+    }
+
+    .logo img {
+        width: 90px;
+        margin-bottom: 19px;
+    }
+
+    .navbar .group {
+        border-top: 1px solid #a0a0a0;
+        padding: 10px 0;
+    }
+
+    .navitem {
+        padding: 12px 0;
+        font-size: 14px;
+        font-weight: 700;
+        display: block;
+        letter-spacing: 1px;
+        position: relative;
+    }
+
+    .navitemlink {
+        color: #1c79e4;
+        text-decoration: none;
+    }
+
+    .navitemlink div.icon {
+        background-image: url('https://png.icons8.com/android/20/0044ff/search.png');
+        position: absolute;
+        right: 0;
+        top: 10px;
+        width: 20px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 20px;
+    }
+
+    .navitemlink div.icon:hover {
+        background-image: url('https://png.icons8.com/android/20/ffffff/search.png');
+    }
+
+    .navitemlink:hover {
+        color: #fff;
+    }
+
+    #mainviewcontainer {
+        margin-left: 220px;
+        padding-bottom: 90px;
+        width: calc( 100% - 220px);
+    }
+
+    #maincontent {
+        padding: 0 20px;
+    }
+
+    .pageheadingbig {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .gridviewitem {
+        display: inline-block;
+        margin-right: 20px;
+        width: 29%;
+        max-width: 200px;
+        min-width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .gridviewitem img {
+        width: 100%;
+    }
+
+    .gridviewinfo {
+        font-weight: 300;
+        text-align: center;
+        padding: 6px 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .entityinfo {
+        padding: 40px 0 10px 0;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .entityinfo .leftsection {
+        width: 30%;
+        float: left;
+        max-width: 250px;
+    }
+
+    .entityinfo .leftsection img {
+        width: 100%;
+    }
+
+    .entityinfo .rightsection {
+        width: 70%;
+        float: left;
+        padding: 5px 10px 5px 40px;
+        box-sizing: border-box;
+    }
+
+    .entityinfo .rightsection h2 {
+        margin-top: 0;
+    }
+
+    .entityinfo .rightsection p {
+        color: #0044ff;
+        font-weight: 200;
+    }
+
+    .tracklist {
+        padding: 0;
+    }
+
+    .tracklistrow {
+        height: 40px;
+        padding: 15px 10px;
+        list-style: none;
+    }
+
+    .tracklistrow span {
+        color: #c7c7c7;
+        font-weight: 300;
+    }
+
+    .tracklistrow:hover {
+        background-color: #282828;
+    }
+
+    .tracklistrow .trackcount {
+        width: 8%;
+        float: left;
+    }
+
+    .tracklistrow .trackcount img {
+        width: 20px;
+        visibility: hidden;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    .tracklistrow:hover .trackcount img {
+        visibility: visible;
+    }
+
+    .tracklistrow .trackcount span {
+        visibility: visible;
+    }
+
+    .tracklistrow:hover .trackcount span {
+        visibility: hidden;
+    }
+
+    .tracklistrow .trackinfo {
+        width: 75%;
+        float: left;
+    }
+
+    .tracklistrow .trackinfo span {
+        display: block;
+    }
+
+    .tracklistrow .trackoptions {
+        width: 5%;
+        float: left;
+        text-align: right;
+    }
+
+    .tracklistrow .trackoptions img {
+        width: 15px;
+        visibility: hidden;
+    }
+
+    .tracklistrow:hover .trackoptions img {
+        visibility: visible;
+    }
+
+    .tracklistrow .trackduration {
+        width: 12%;
+        float: left;
+        text-align: right;
+    }
+
+    .tracklistrow .trackinfo .trackname {
+        color: #fff;
+        margin-bottom: 7px;
+    }
+
+    .artistinfo {
+        text-align: center;
+    }
+
+    .button {
+        color: #fff;
+        cursor: pointer;
+        margin-bottom: 10px;
+        background-color: transparent;
+        font-weight: 500;
+        letter-spacing: 2px;
+        border: 1px solid #fff;
+        border-radius: 250px;
+        padding: 15px;
+        min-width: 130px;
+    }
+
+    .button.blue {
+        background-color: #0044ff;
+        border: none;
+    }
+
+    .borderbottom {
+        border-bottom: 1px solid #939393;
+        margin-bottom: 20px;
+    }
+
+    .tracklistcontainer h2,
+    .gridviewcontainer h2 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    [role="link"] {
+        cursor: pointer;
+    }
+
+    .searchcontainer {
+        background-color: #242424;
+        padding: 20px 28px;
+    }
+
+    .searchcontainer h4 {
+        margin: 0;
+        font-weight: 300;
+    }
+
+    .searchcontainer input {
+        width: 100%;
+        background-color: transparent;
+        margin-top: 20px;
+        border: none;
+        color: #fff;
+        font-weight: 700;
+        font-size: 65px;
+        letter-spacing: 2px;
+    }
+
+    .searchresultrow {
+        padding: 15px 10px;
+    }
+
+    .searchresultrow:hover {
+        background-color: #494949;
+    }
+
+    .searchresultrow .artistname span {
+        color: #fff;
+    }
+
+    .artistcontainer h2 {
+        text-align: center;
+    }
+
+    .noresults {
+        margin: 15px;
+        display: block;
+     }
+     .buttonitems button {
+         display: block;
+         margin: 0 auto 20px auto;
+         font-size: 12px;
+     }
+
+
+    .buttonitems .blue {
+        display: block;
+        margin: 0 auto 20px auto;
+        font-size: 12px;
+    }
+
+    .playlistcontainer {
+        padding: 10px 0;
+    }
+
+    .playlistimage {
+        border: 3px solid #282828;
+        padding: 10px;
+    }
+
+    .optionsmenu {
+        position: fixed;
+        background-color: #282828;
+        width: 200px;
+        border: 1px solid rgba(0, 0, 0, .15);
+        z-index: 1000;
+        display: none;
+    }
+
+    .optionsmenu .item {
+        width: 100%;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        font-weight: 400;
+        color: rgba(147, 147, 147, 0.8);
+        height: 40px;
+        cursor: pointer;
+        background-color: #282828;
+        font-size: 14px;
+
+    }
+    .optionsmenu .item:hover {
+        color: #fff;
+        background-color: #333;
+        border-color: #333;
+        
+    }
+
+    .optionsmenu select {
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    .userinfo h1 {
+        text-align: center;
+    }
+
+    div.userdetails {
+        padding: 20px;
+    }
+
+    .userdetails .container h2 {
+        text-align: center; 
+    }
+
+    .userdetails .container input[type="text"],
+    .userdetails .container .button,
+    .userdetails .container input[type="password"] {
+        display: block; 
+        margin: 16px auto;
+    }
+
+    .userdetails input[type="text"],
+    .userdetails input[type="password"] {
+        height: 50px;
+        width: 100%;
+        background:#1f1f1f;
+        border: none;
+        font-size: 16px;
+        font-weight: 300;
+        padding: 0 20px;
+
+    }
+
+    .userdetails .message {
+        color: #2ebd59;
+        font-weight: 300;
+    }
